@@ -27,7 +27,16 @@ const handleCheckState = async (e) => {
   // setLoading(true);
   try {
     let data = {
-      email: email
+      email: email,
+      first_name: firstName,
+      last_name: lastName,
+      password: password,
+      password2: confirmPassword,
+        date_of_birth: "2021-09-09",
+        phone_number: "9985412365",
+        gender: "Male",
+
+
   }
   const response = await fetch(`https://baff-2405-201-300a-e213-e1ba-cf5e-fcec-270.ngrok-free.app/user/register/`, {
     method: 'POST',
@@ -37,10 +46,51 @@ const handleCheckState = async (e) => {
     body: JSON.stringify(data),
   });
 const res = await response.json();
-console.log(res);
-  } catch (error) {
-    console.log(error);
-  }
+if (res.results) {
+    
+    if (res.results === 'Student'){
+    }
+    else if (res.results.user_type === 'Faculty'){
+        navigate('/markattendance');
+    }
+    SetAlert('Account Created Successfully','success')
+    toast.success("Account Created Successfully",{ autoClose: 1300, style: {fontSize:'18px'},draggablePercent: 20})
+    
+}
+else if (res.error){
+    
+}
+else {
+    if (Array.isArray(res)) {
+        // If it's an array, loop through it
+        res.forEach((element) => {
+            let message;
+
+            if (element.message) {
+                message = element.message;
+            } else if (element.errors) {
+                message = element.errors;
+            }
+            
+        });
+    } else {
+        // If it's not an array, handle individual case
+        let message;
+
+        if (res.message) {
+            message = res.message;
+        } else if (res.errors) {
+            message = res.errors;
+        }
+        
+    };
+};
+} catch (error) {
+console.error('Error fetching data:', error);
+} finally {
+setLoading(false);
+}
+
 }
 return (
   <div id="main-container">
@@ -112,7 +162,7 @@ return (
                   type="password"
                   placeholder="Enter Your Password Again"
                   className="rounded-input my-2"
-                  value={confirmpassword}
+                  value={confirmPassword}
                   id='rconfirmpassword'
                   name='rconfirmpassword'
                   onChange={(e) => setconfirmPassword(e.target.value)}
@@ -123,8 +173,8 @@ return (
                   type="text"
                   id="firstname"
                   name="firstname"
-                  value={firstname}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={firstName}
+                  onChange={(e) => setfirstName(e.target.value)}
                   placeholder="Enter First Name"
                   className="rounded-input my-2"
                   style={{fontWeight:'bold'}}
@@ -134,13 +184,13 @@ return (
                   type="text"
                   id="lastname"
                   name="lastname"
-                  value={lastname}
+                  value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   placeholder="Enter Last Name"
                   className="rounded-input my-2"
                   style={{fontWeight:'bold'}}
               />
-              {showSecretKey === true ? (
+              {/* {showSecretKey === true ? (
                   <>
               <label htmlFor="secretkey">Secret Key</label>
               <input
@@ -153,34 +203,11 @@ return (
               onChange={(e) => setSecretKey(e.target.value)}
               style={{fontWeight:'bold'}}
           />
-          </>
-              ):(<>
-              <label htmlFor="enrollmentnumber">Enrollment Number</label>
-              <input
-                      type="text"
-                      id="enrollmentnumber"
-                      name="enrollmentnumber"
-                      value={enrollmentnumber}
-                      onChange={(e) => setEnrollmentNumber(e.target.value)}
-                      placeholder="Enter Enrollment Number"
-                      className="rounded-input my-2"
-                      style={{fontWeight:'bold'}}
-                  />
-              </>)}
+          </> */}
+              
                       </form>
-                      {/* <button onClick={handleCheckState} className='btn2 btn2--large btn2--full-width margin-t-20 btncustom' type="submit"><strong>Register</strong></button> */}
-                      <button
-                          onClick={handleCheckState}
-                          className='btn2 btn2--large btn2--full-width margin-t-20 btncustom'
-                          type="submit"
-                          disabled={loading} // Disable the button when loading
-                      />
-                          {/* {loading ? (
-                              <ClipLoader color={'#4285f4'} loading={true} size={35} />
-                          ) : (
-                              <strong>Register</strong>
-                          )}
-                      </button> */}
+                      <button onClick={handleCheckState} className='btn2 btn2--large btn2--full-width margin-t-20 btncustom' type="submit"><strong>Register</strong></button>
+                      
                   </div>
               </div>
           </main>
@@ -200,3 +227,4 @@ const InputBox = ({ type, placeholder, name }) => {
     </div>
   );
 };
+export default Signup;
