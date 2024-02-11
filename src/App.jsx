@@ -12,6 +12,7 @@ import Signup from './pages/Signup'
 import Error from './pages/Error'
 import Home from './pages/Razorpay'
 import Courses from './pages/Courses'
+import CoursePage from './pages/CoursePage'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/signup' element={<Signup />} />
         <Route path='/pay' element={<Home />} />
         <Route path='/courses' element={<Courses />} />
+        <Route path="/courses/:id" element={<CoursePage />} />
         <Route path='/*' element={<Error />} />
       </Routes>
     </>

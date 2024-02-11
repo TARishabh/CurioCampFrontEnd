@@ -8,7 +8,7 @@ const Navbar = () => {
       <img src={Logo} alt="Logo" className="h-[40px] absolute left-3" />
       <div>
         <ul className="flex gap-5">
-          <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
+          <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to="/">
             Home
           </Link>
           <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to="/courses">
