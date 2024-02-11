@@ -11,10 +11,9 @@ import Hero from './pages/Home'
 import Signup from './pages/Signup'
 import Error from './pages/Error'
 import Home from './pages/Razorpay'
+import Courses from './pages/Courses'
 
-
-function App() {
-
+const App = () => {
   return (
     <>
       <Routes>
@@ -22,6 +21,7 @@ function App() {
         <Route path='/signin' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/pay' element={<Home />} />
+        <Route path='/courses' element={<Courses />} />
         <Route path='/*' element={<Error />} />
       </Routes>
     </>

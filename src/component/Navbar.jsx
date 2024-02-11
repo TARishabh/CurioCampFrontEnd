@@ -11,7 +11,7 @@ const Navbar = () => {
           <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
             Home
           </Link>
-          <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
+          <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to="/courses">
             Courses
           </Link>
           <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
