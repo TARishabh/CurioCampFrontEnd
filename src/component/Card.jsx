@@ -1,19 +1,23 @@
+// Card.js
 import React from 'react'
 import { IoBookOutline } from "react-icons/io5";
 
-const Card = () => {
+const Card = ({ course }) => {
+  const { title, description, image, keyword, price, course_modules } = course;
+
   return (
     <div className='shadow-lg p-3 rounded-md max-w-[270px]'>
-      <img  src="" alt="Courses Image" />
+      <img src={image} alt="Courses Image" />
       <div>
-        <h2 className='font-bold text-lg'>Web Development</h2>
-        <p className=''>Become A Web Developer In 6 Months</p>
-        <p className='flex gap-3'><IoBookOutline className='mt-1'/> 4 Chapters</p>
-        <p className='text-sm'>React, Tailwind</p>
-        <p>Free</p>
+        <h2 className='font-bold text-lg'>{title}</h2>
+        <p className=''>{description}</p>
+        <p className='flex gap-3'><IoBookOutline className='mt-1'/> {course_modules} Chapters</p>
+        <p className='text-sm'>{keyword}</p>
+        <p>{price}</p>
       </div>
     </div>
   )
 }
 
-export default Card
+export default Card;
+
