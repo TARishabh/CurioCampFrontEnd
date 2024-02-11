@@ -54,11 +54,16 @@ const CourseContent = () => {
             <p>{module.title}</p>
           </AccordionSummary>
           <AccordionDetails>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-              quae enim ea saepe aliquid voluptatibus pariatur hic alias dicta
-              culpa.
-            </p>
+            {module.content_desc.map((content, index) => (
+              <div key={index}>
+                {content.content_type === "video" ? (
+                  <FaRegCirclePlay />
+                ) : content.content_type === "quiz" ? (
+                  <HiOutlineDocumentCheck />
+                ) : null}
+                <h1>{content.title}</h1>
+              </div>
+            ))}
           </AccordionDetails>
         </Accordion>
       ))}

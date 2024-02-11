@@ -13,6 +13,7 @@ import Error from './pages/Error'
 import Home from './pages/Razorpay'
 import Courses from './pages/Courses'
 import CoursePage from './pages/CoursePage'
+// import ChatComponent from './pages/ChatComponent'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/pay' element={<Home />} />
         <Route path='/courses' element={<Courses />} />
         <Route path="/courses/:id" element={<CoursePage />} />
+        {/* <Route path="/chat" element={<ChatComponent />} /> */}
         <Route path='/*' element={<Error />} />
       </Routes>
     </>
