@@ -9,6 +9,7 @@ import Card from './component/Card'
 import Modal from './component/Modal'
 import Hero from './pages/Home'
 import Signup from './pages/Signup'
+import Error from './pages/Error'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Hero />} />
         <Route path='/signin' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/*' element={<Error />} />
       </Routes>
     </>
   )

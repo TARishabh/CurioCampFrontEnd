@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import TextField from "../component/TextField";
+import RadioField from "../component/RadioField";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
@@ -30,7 +31,6 @@ const Signup = () => {
         }}
         validationSchema={validate}
         onSubmit={async (values, formik) => {
-          console.log("*"*50)
           const formData = {
             email: values.email,
             first_name: values.firstName,
@@ -44,7 +44,7 @@ const Signup = () => {
           // console.log(formData);
           console.log(JSON.stringify(formData));
           const response = await fetch(
-            "https://37b0-2405-201-300a-e213-f568-9a35-9648-ea58.ngrok-free.app/user/register/",
+            "https://c115-2405-201-300a-e213-8017-2864-59bb-f740.ngrok-free.app/user/register/",
             {
               method: "POST",
               body: JSON.stringify(formData),
@@ -53,16 +53,16 @@ const Signup = () => {
                 "Content-Type": "application/json",
               },
             }
-          )
-            const responseData = await response.json();
-            console.log(responseData);
+          );
+          const responseData = await response.json();
+          console.log(responseData);
         }}
       >
         {(formik) => (
           <Form className="flex flex-col max-w-[600px] w-full">
             <div className="pb-8">
               <p className="text-4xl font-bold inline border-b-4 border-[#382bf0]">
-                Contact
+                Sign Up
               </p>
             </div>
 
@@ -84,20 +84,20 @@ const Signup = () => {
               className={`my-2 w-full p-2 rounded-md text-black bg-[#E0E0E0] dark:bg-[#ccd6f6] shadow-lg shadow-[#040c166b] border-4
               }`}
             >
-              <div>
-                <input type="radio" name="gender" value="Male" id="male" />
-                <label htmlFor="male">Male</label>
-              </div>
-              <div>
-                <input type="radio" name="gender" value="Female" id="female" />
-                <label htmlFor="female">Female</label>
-              </div>
-              <div>
-                <input type="radio" name="gender" value="Others" id="others" />
-                <label htmlFor="others">Others</label>
-              </div>
+              <RadioField type="radio" name="gender" value="Male" id="male" />
+              <RadioField
+                type="radio"
+                name="gender"
+                value="Female"
+                id="female"
+              />
+              <RadioField
+                type="radio"
+                name="gender"
+                value="Others"
+                id="others"
+              />
             </div>
-            {/* <TextField name="gender" type="text" placeholder="Gender" /> */}
             <TextField
               name="phoneNumber"
               type="text"

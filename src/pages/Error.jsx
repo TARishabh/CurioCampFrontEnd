@@ -1,5 +1,6 @@
 import React from "react";
-import '../App.css'
+// import '../App.css'
+import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
@@ -18,12 +19,12 @@ const Error = () => {
                 <p className="mb-8 text-lg text-white">
                   The page you are looking for it maybe deleted
                 </p>
-                <a
-                  href="javascript:void(0)"
-                  className="inline-block rounded-lg border border-white px-8 py-3 text-center text-base font-semibold text-white transition hover:bg-white hover:text-primary"
+                <Link
+                  to="/"
+                  className="inline-block rounded-lg border border-white px-8 py-3 text-center text-base font-semibold text-white transition hover:bg-white hover:text-black"
                 >
                   Go To Home
-                </a>
+                </Link>
               </div>
             </div>
           </div>
