@@ -3,13 +3,14 @@
 // import viteLogo from '/vite.svg'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Navbar from './component/Navbar'
+// import Navbar from './component/Navbar'
 import Signin from './pages/Signin'
-import Card from './component/Card'
-import Modal from './component/Modal'
+// import Card from './component/Card'
+// import Modal from './component/Modal'
 import Hero from './pages/Home'
 import Signup from './pages/Signup'
 import Error from './pages/Error'
+import Home from './pages/Razorpay'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/' element={<Hero />} />
         <Route path='/signin' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/pay' element={<Home />} />
         <Route path='/*' element={<Error />} />
       </Routes>
     </>
