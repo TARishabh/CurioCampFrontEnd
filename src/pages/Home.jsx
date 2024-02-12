@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home">
       <Navbar />
-      <section className="lg:p-20 p-5 max-w-xl">
+      <section className="lg:p-20 p-5 max-w-xl items-le">
         <h1 className="font-bold text-4xl">
           Welcome to CurioCamp: Your Portal to Knowledge Exploration
         </h1>

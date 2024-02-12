@@ -10,7 +10,9 @@ const Navbar = () => {
     <>
       <div className="hidden lg:flex">
         <div className="p-4 h-[70px] w-full flex justify-center shadow-2xl">
-          <img src={Logo} alt="Logo" className="h-[40px] absolute left-3" />
+        <div>
+        <img src={Logo} alt="Logo" className="h-[40px] absolute left-3 top-4" />
+        </div>
           <div>
             <ul className="flex gap-5">
               <Link
@@ -37,7 +39,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="absolute right-3 top-3">
-            <div className="py-2 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#0F1035] text-[#FFFFFF] hover:bg-[#0369A1] hover:-translate-y-1">
+            <div className="py-2 px-4 mx-2 mt-1 inline-block rounded-full shadow-2xl bg-[#0F1035] text-[#FFFFFF] hover:bg-[#0369A1] hover:-translate-y-1">
               <Link to="/signin">Log in</Link>
             </div>
 
