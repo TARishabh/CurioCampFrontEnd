@@ -12,7 +12,7 @@ import Review from "../courseContent/Review";
 const CoursePage = () => {
   const { id } = useParams();
   const [course, setCourse] = useState([]);
-//   let scrollStop = false;
+  //   let scrollStop = false;
 
   useEffect(() => {
     const url = import.meta.env.VITE_BASE_URL;
@@ -32,14 +32,14 @@ const CoursePage = () => {
       });
   }, []);
 
-//   function getScrollPosition() {
-//     let scrollPosition = window.scrollY;
-//     if(scrollPosition >= 350){
-//         scrollStop = true;
-//     }
-//     console.log('Scroll Position:', scrollPosition);
-//   }
-//   window.addEventListener('scroll', getScrollPosition);
+  //   function getScrollPosition() {
+  //     let scrollPosition = window.scrollY;
+  //     if(scrollPosition >= 350){
+  //         scrollStop = true;
+  //     }
+  //     console.log('Scroll Position:', scrollPosition);
+  //   }
+  //   window.addEventListener('scroll', getScrollPosition);
 
   return (
     <div>
