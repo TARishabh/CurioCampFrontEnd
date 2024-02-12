@@ -47,14 +47,14 @@ const CourseContent = () => {
       <h1 className="font-bold text-xl mb-3">Course Content</h1>
       {/* {console.log(Array.isArray(course))} */}
       {course.map((module) => (
-        <Accordion className="max-w-[700px]" key={module.id}>
+        <Accordion className="max-w-[700px] gap-2" key={module.id}>
           <AccordionSummary
             expandIcon={<MdOutlineExpandMore />}
             className="shadow-md"
           >
             <p>{module.title}</p>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className="">
             {module.content_desc.map((content, index) => (
               <div key={index}>
                 {content.content_type === "video" ? (
