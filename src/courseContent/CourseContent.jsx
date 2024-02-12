@@ -56,12 +56,14 @@ const CourseContent = () => {
           </AccordionSummary>
           <AccordionDetails>
             {module.content_desc.map((content, index) => (
-              <div key={index}>
+              <div className="flex gap-2" key={index}>
+                <div className="mt-1" >
                 {content.content_type === "video" ? (
                   <FaRegCirclePlay />
                 ) : content.content_type === "quiz" ? (
                   <HiOutlineDocumentCheck />
                 ) : null}
+                </div>
                 <h1>{content.title}</h1>
                 {/* <button type="submit" onClick={handleCompleted}>
                   is completed

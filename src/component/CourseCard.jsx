@@ -7,8 +7,9 @@ const CourseCard = ({ course }) => {
   const { id, title, description, image, keyword, price, course_modules } = course;
 
   return (
-    <Link className='shadow-lg p-3 rounded-md max-w-[270px]' to={`/courses/${id}/`}>
-      <img src={image} alt="Courses Image" />
+    <div className='shadow-lg p-3 rounded-md max-w-[270px] hover:-translate-y-1'>
+    <Link  to={`/courses/${id}/`}>
+      <img className='shadow-md mb-3 hover:-translate-y-1' src={image} alt="Courses Image" />
       <div>
         <h2 className='font-bold text-lg'>{title}</h2>
         <p className='font-semibold'>{description}</p>
@@ -17,6 +18,7 @@ const CourseCard = ({ course }) => {
         <p className='font-semibold'>₹{price}</p>
       </div>
     </Link>
+    </div>
   )
 }
 

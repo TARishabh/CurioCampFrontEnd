@@ -10,7 +10,7 @@ const RadioField = ({...props}) => {
         {...field} {...props}
         autoComplete='off'
       />
-      <label htmlFor={`${field.id}`}>{field.value}</label>
+      <label className='pl-2 pb-1' htmlFor={`${field.id}`}>{field.value}</label>
       <ErrorMessage component="div" name={field.name} className = "text-sm text-red-600"/>
     </div>
   )
