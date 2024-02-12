@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="w-full px-4 lg:w-5/12">
               <div className="hero-content">
                 <h1 className="mb-5 text-4xl font-bold !leading-[1.208] text-dark dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl">
-                  Kickstart Startup Website with TailGrids
+                  Build the Skills to Drive Your Career
                 </h1>
                 <p className="mb-8 max-w-[480px] text-base text-body-color dark:text-dark-6">
                   With TailGrids, business and students thrive together.
@@ -23,10 +23,10 @@ const Hero = () => {
                       href="/#"
                       className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-dark lg:px-7"
                     >
-                      Get Started
+                      View Courses
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a
                       href="/#"
                       className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-[#464646] hover:text-primary dark:text-white"
@@ -62,9 +62,9 @@ const Hero = () => {
                       </span>
                       Download App
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
-                <div className="clients pt-16">
+                {/* <div className="clients pt-16">
                   <h6 className="mb-6 flex items-center text-xs font-normal text-body-color dark:text-dark-6">
                     Some Of Our Clients
                     <span className="ml-3 inline-block h-px w-8 bg-body-color"></span>
@@ -86,7 +86,7 @@ const Hero = () => {
                       imgSrc="https://cdn.tailgrids.com/2.0/image/assets/images/brands/uideck.svg"
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="hidden px-4 lg:block lg:w-1/12"></div>

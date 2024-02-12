@@ -18,7 +18,6 @@ function App() {
       
 
       <Hero />
-      {/* <Navbar /> */}
       <Signup />
 
       {/* <Card />
