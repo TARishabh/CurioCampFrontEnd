@@ -13,8 +13,9 @@ import Error from './pages/Error'
 import Home from './pages/Razorpay'
 import Courses from './pages/Courses'
 import CoursePage from './pages/CoursePage'
-import ChatComponent from './pages/ChatComponent'
-import LiveStream from './pages/Agora'
+// import ChatComponent from './pages/ChatComponent'
+// import LiveStream from './pages/Agora'
+import VideoCallComponent from './pages/VideoCallComponent '
 
 const App = () => {
   return (
@@ -26,8 +27,9 @@ const App = () => {
         <Route path='/pay' element={<Home />} />
         <Route path='/courses' element={<Courses />} />
         <Route path="/courses/:id" element={<CoursePage />} />
-        <Route path="/chat" element={<ChatComponent />} />
-        <Route path="/stream" element={<LiveStream />} />
+        {/* <Route path="/chat" element={<ChatComponent />} /> */}
+        {/* <Route path="/stream" element={<LiveStream />} /> */}
+        <Route path="/livevideo" element={<VideoCallComponent />} />
         <Route path='/*' element={<Error />} />
       </Routes>
     </>

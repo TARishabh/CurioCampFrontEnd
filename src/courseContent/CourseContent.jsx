@@ -16,7 +16,7 @@ const CourseContent = () => {
   // const handleCompleted
   useEffect(() => {
     const url = import.meta.env.VITE_BASE_URL;
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjgxMjc2LCJpYXQiOjE3MDc2NzY0NzYsImp0aSI6ImRiNTQzMTY0NzkzYzRkY2JhYjQxMjY0YzcxNGI1MWM3IiwidXNlcl9pZCI6MX0.VECAlRtCIzUeg2g1Q0DX09dswT0oVmSFTF0FwUU0Cmw"
+    const token = localStorage.getItem('token');
     fetch(`${url}api/modules/?course_id=${id}`, {
         method: 'GET',
         headers: {

@@ -8,6 +8,7 @@ import CourseContent from "../courseContent/CourseContent";
 import Details from "../courseContent/Details";
 import Instructor from "../courseContent/Instructor";
 import Review from "../courseContent/Review";
+import PaymentCard from "../courseContent/PaymentCard";
 
 const CoursePage = () => {
   const { id } = useParams();
@@ -111,6 +112,7 @@ const CoursePage = () => {
         <Details />
         <Instructor />
         <Review />
+        <PaymentCard price={course.price}/>
       </div>
     </div>
   );

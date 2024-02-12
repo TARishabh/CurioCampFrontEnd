@@ -2,27 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, onValue } from 'firebase/database';
 
-// const firebaseConfig = {
-//     apiKey: import.meta.env.VITE_apiKey,
-//     authDomain: import.meta.env.VITE_authDomain,
-//     databaseURL: import.meta.env.VITE_databaseURL,
-//     projectId: import.meta.env.VITE_projectId,
-//     storageBucket: import.meta.env.VITE_storageBucket,
-//     messagingSenderId: import.meta.env.VITE_messagingSenderId,
-//     appId: import.meta.env.VITE_appId,
-//     measurementId: import.meta.env.VITE_measurementId,
-// };
-
-
 const firebaseConfig = {
-    apiKey: "AIzaSyBm3--ubPJARyUzEGmwUVqqmiGeLBQbATU",
-    authDomain: "curiocamp-b13dc.firebaseapp.com",
-    databaseURL: "https://curiocamp-b13dc-default-rtdb.firebaseio.com",
-    projectId: "curiocamp-b13dc",
-    storageBucket: "curiocamp-b13dc.appspot.com",
-    messagingSenderId: "346127704571",
-    appId: "1:346127704571:web:4c77347a938eb9481e2b5e",
-    measurementId: "G-1PYWZ9RYPH"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    databaseURL: import.meta.env.VITE_databaseURL,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId,
+    measurementId: import.meta.env.VITE_measurementId,
 };
 
 // const analytics = getAnalytics(app);

@@ -3,7 +3,7 @@ import { useState } from "react";
 import useRazorpay from "react-razorpay";
 
 const Home = ()=>{
-
+    const url = import.meta.env.VITE_BASE_URL;
     const Razorpay = useRazorpay();
     const [amount, setAmount] = useState(500);
 
@@ -11,7 +11,7 @@ const Home = ()=>{
     const complete_order = (paymentID, orderID, signature)=>{
         axios({
             method: 'post',
-            url: 'http://127.0.0.1:8000/verifySignature/',
+            url: `${url}verifySignature/`,
             data: {
                 "payment_id": paymentID,
                 "order_id": orderID,
@@ -29,7 +29,7 @@ const Home = ()=>{
 
     const razorPay = () => {
         // Get the authentication token from localStorage or wherever it's stored
-        const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjQwMTcyLCJpYXQiOjE3MDc2MzUzNzIsImp0aSI6IjIxMDE1NzNhM2QwOTQ4NTM5MTNlMGExMDcwN2U1ZDJhIiwidXNlcl9pZCI6MX0.zBm4r385_WQl3g1QFAifg6xj7rsiGwK1Xt7yPqXWhlA';
+        const authToken = localStorage.getItem('token');
     
         // Create the axios instance with the authentication token
         const axiosInstance = axios.create({
@@ -41,7 +41,8 @@ const Home = ()=>{
         // Make the API request with the axios instance
         axiosInstance({
             method: 'post',
-            url: 'http://127.0.0.1:8000/createOrder/',
+            url: `${url}createOrder/`,
+            
             data: {
                 user: 1,
                 course: 1,
@@ -57,7 +58,7 @@ const Home = ()=>{
             
             // handle payment
             const options = {
-                key: "rzp_test_5uFkpY7sQJWElt", // Enter the Key ID generated from the Dashboard
+                key: import.meta.env.VITE_RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
                 name: "CurioCamp",
                 description: "Test Transaction",
                 image: "https://example.com/your_logo",
@@ -72,9 +73,9 @@ const Home = ()=>{
                     )
                 },
                 prefill: {
-                name: "Rishabh Sharma",
-                email: "rishabh.sharma110e@gmail.com",
-                contact: "6268447609",
+                    name: import.meta.env.VITE_NAME,
+                    email: import.meta.env.VITE_NUMBER,
+                    contact: import.meta.env.VITE_EMAIL,
                 },
                 notes: {
                 address: "Razorpay Corporate Office",

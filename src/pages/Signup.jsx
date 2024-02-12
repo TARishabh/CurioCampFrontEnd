@@ -6,6 +6,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
 const Signup = () => {
+  const url = import.meta.env.VITE_BASE_URL;
   const validate = Yup.object({
     email: Yup.string().email("Email is invalid").required("Required"),
     firstName: Yup.string().required("Required"),
@@ -44,7 +45,7 @@ const Signup = () => {
           // console.log(formData);
           console.log(JSON.stringify(formData));
           const response = await fetch(
-            "https://c115-2405-201-300a-e213-8017-2864-59bb-f740.ngrok-free.app/user/register/",
+            `${url}user/register/`,
             {
               method: "POST",
               body: JSON.stringify(formData),
