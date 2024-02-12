@@ -13,6 +13,7 @@ import { HiOutlineDocumentCheck } from "react-icons/hi2";
 const CourseContent = () => {
   const [course, setCourse] = useState([]);
   const { id } = useParams();
+  // const handleCompleted
   useEffect(() => {
     const url = import.meta.env.VITE_BASE_URL;
     const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjgxMjc2LCJpYXQiOjE3MDc2NzY0NzYsImp0aSI6ImRiNTQzMTY0NzkzYzRkY2JhYjQxMjY0YzcxNGI1MWM3IiwidXNlcl9pZCI6MX0.VECAlRtCIzUeg2g1Q0DX09dswT0oVmSFTF0FwUU0Cmw"
@@ -62,6 +63,9 @@ const CourseContent = () => {
                   <HiOutlineDocumentCheck />
                 ) : null}
                 <h1>{content.title}</h1>
+                {/* <button type="submit" onClick={handleCompleted}>
+                  is completed
+                </button> */}
               </div>
             ))}
           </AccordionDetails>
