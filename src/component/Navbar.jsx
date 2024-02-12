@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/logo_Transparent.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ isSignup, isSignin }) => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   return (
@@ -37,23 +37,29 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="absolute right-3 top-3">
-            <div className="py-2 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#0F1035] text-[#FFFFFF] hover:bg-[#0369A1] hover:-translate-y-1">
-              <Link to="/signin">Log in</Link>
-            </div>
+            {isSignup && (
+              <div className="py-2 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#0F1035] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300">
+                <Link to="/signin">Log in</Link>
+              </div>
+            )}
 
-            <div className="py-2 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#0F1035] text-[#FFFFFF] hover:bg-[#0369A1] hover:-translate-y-1">
-              <Link to="/signup">Sign Up</Link>
-            </div>
+            {isSignin && (
+              <div className="py-2 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#0F1035] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300">
+                <Link to="/signup">Sign Up</Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
       {/* hamburger */}
       <div
         onClick={handleClick}
-        className="lg:hidden z-40 text-black p-4 h-[70px] w-full flex justify-between shadow-2xl"
+        className="lg:hidden z-40 text-black p-3 h-[70px] w-full flex justify-between shadow-2xl"
       >
-        <img src={Logo} alt="Logo"/>
-        {nav ? <FaTimes size={30} /> : <FaBars size={25} />}
+        <img className="h-[40px]" src={Logo} alt="Logo" />
+        <div className="mt-2">
+          {nav ? <FaTimes size={30} /> : <FaBars size={25} />}
+        </div>
       </div>
 
       {/* mobile menu */}
