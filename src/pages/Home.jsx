@@ -5,8 +5,8 @@ import Navbar from "../component/Navbar";
 const Home = () => {
   return (
     <div className="home">
-      <Navbar />
-      <section className="p-20 max-w-lg">
+      <Navbar isSignin isSignup/>
+      <section className="lg:p-20 p-5 max-w-xl">
         <h1 className="font-bold text-4xl">
           Welcome to CurioCamp: Your Portal to Knowledge Exploration
         </h1>
@@ -16,12 +16,9 @@ const Home = () => {
           learning community. Flexible learning options to fit your schedule and
           learning style. Earn certifications and unlock new opportunities.
         </p>
-        <Link
-          className="py-2 px-5 rounded-full shadow-xl bg-[#0F1035] text-[#FFFFFF] hover:bg-[#0369A1] hover:-translate-y-1"
-          to="/courses"
-        >
-          View Courses
-        </Link>
+        <div className="py-2 px-5 rounded-full inline-block shadow-xl bg-[#0F1035] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-200">
+          <Link to="/courses">View Courses</Link>
+        </div>
       </section>
     </div>
   );

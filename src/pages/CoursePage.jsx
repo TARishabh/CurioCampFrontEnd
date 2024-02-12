@@ -13,7 +13,7 @@ import PaymentCard from "../courseContent/PaymentCard";
 const CoursePage = () => {
   const { id } = useParams();
   const [course, setCourse] = useState([]);
-//   let scrollStop = false;
+  //   let scrollStop = false;
 
   useEffect(() => {
     const url = import.meta.env.VITE_BASE_URL;
@@ -33,19 +33,19 @@ const CoursePage = () => {
       });
   }, []);
 
-//   function getScrollPosition() {
-//     let scrollPosition = window.scrollY;
-//     if(scrollPosition >= 350){
-//         scrollStop = true;
-//     }
-//     console.log('Scroll Position:', scrollPosition);
-//   }
-//   window.addEventListener('scroll', getScrollPosition);
+  //   function getScrollPosition() {
+  //     let scrollPosition = window.scrollY;
+  //     if(scrollPosition >= 350){
+  //         scrollStop = true;
+  //     }
+  //     console.log('Scroll Position:', scrollPosition);
+  //   }
+  //   window.addEventListener('scroll', getScrollPosition);
 
   return (
     <div>
       <Navbar />
-      <div className="w-full h-[300px] bg-[#DCF2F1] p-20 flex flex-col gap-2">
+      <div className="w-full h-[300px] bg-[#B6DEEF] p-20 flex flex-col gap-2">
         <h2 className="font-bold text-4xl">{course.title}</h2>
         <p className="font-semibold">{course.description}</p>
         <p className="flex gap-2">
@@ -54,11 +54,11 @@ const CoursePage = () => {
         <p className="text-sm">{course.keyword}</p>
         <p className="font-semibold">₹{course.price}</p>
       </div>
-      <div>
+      <div className="w-full md:w-2/3">
         <ul className="m-2 p-4 sticky top-2 bg-white rounded-sm z-10">
           <Link
             activeClass="active"
-            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#0369A1]"
+            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#B6DEEF]"
             spy={true}
             to="Overview"
             smooth={true}
@@ -68,7 +68,7 @@ const CoursePage = () => {
           </Link>
           <Link
             activeClass="active"
-            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#0369A1]"
+            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#B6DEEF]"
             spy={true}
             to="CourseContent"
             smooth={true}
@@ -78,7 +78,7 @@ const CoursePage = () => {
           </Link>
           <Link
             activeClass="active"
-            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#0369A1]"
+            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#B6DEEF]"
             spy={true}
             to="Details"
             smooth={true}
@@ -88,7 +88,7 @@ const CoursePage = () => {
           </Link>
           <Link
             activeClass="active"
-            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#0369A1]"
+            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#B6DEEF]"
             spy={true}
             to="Instructor"
             smooth={true}
@@ -98,7 +98,7 @@ const CoursePage = () => {
           </Link>
           <Link
             activeClass="active"
-            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#0369A1]"
+            className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#B6DEEF]"
             spy={true}
             to="Review"
             smooth={true}

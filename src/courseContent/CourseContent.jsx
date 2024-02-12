@@ -42,26 +42,28 @@ const CourseContent = () => {
   return (
     <div
       name="CourseContent"
-      className="m-4 p-3 max-w-[600px] shadow-lg rounded-sm"
+      className="m-4 p-3 max-w-[800px] shadow-lg rounded-sm"
     >
       <h1 className="font-bold text-xl mb-3">Course Content</h1>
       {/* {console.log(Array.isArray(course))} */}
       {course.map((module) => (
-        <Accordion className="max-w-[500px]" key={module.id}>
+        <Accordion className="max-w-[700px] gap-2" key={module.id}>
           <AccordionSummary
             expandIcon={<MdOutlineExpandMore />}
             className="shadow-md"
           >
             <p>{module.title}</p>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className="">
             {module.content_desc.map((content, index) => (
-              <div key={index}>
+              <div className="flex gap-2" key={index}>
+                <div className="mt-1 " >
                 {content.content_type === "video" ? (
                   <FaRegCirclePlay />
                 ) : content.content_type === "quiz" ? (
                   <HiOutlineDocumentCheck />
                 ) : null}
+                </div>
                 <h1>{content.title}</h1>
                 {/* <button type="submit" onClick={handleCompleted}>
                   is completed
