@@ -5,16 +5,24 @@ import Navbar from "../component/Navbar";
 import { Formik, Form } from "formik";
 import Img from "../assets/login_vector.png";
 import * as Yup from "yup";
+import { useNavigate } from 'react-router-dom';
+// import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+import { ClipLoader, PacmanLoader } from "react-spinners";
+
 
 const Signin = () => {
   const url = import.meta.env.VITE_BASE_URL;
+  const [loading, setLoading] = useState(false); // Add loading state
+  const navigate = useNavigate();
   const validate = Yup.object({
     email: Yup.string().email("Email is invalid").required("Required"),
     pwd: Yup.string().required("Required"),
   });
+
   return (
     <>
-      <Navbar isSignin/>
+      <Navbar isSignin />
       <div className="flex justify-around">
         <div className="w-full mt-20 flex justify-center items-center text-black">
           <Formik
@@ -24,22 +32,25 @@ const Signin = () => {
             }}
             validationSchema={validate}
             onSubmit={async (values, formik) => {
+              setLoading(true); // Set loading state to true on form submission
               const formData = { email: values.email, password: values.pwd };
-              console.log(formData);
               console.log(JSON.stringify(formData));
-              const response = await fetch(
-                "https://37b0-2405-201-300a-e213-f568-9a35-9648-ea58.ngrok-free.app/user/login/",
-                {
-                  method: "POST",
-                  body: JSON.stringify(formData),
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                  },
-                }
-              );
+              const response = await fetch(`${url}user/login/`, {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                },
+              });
               const responseData = await response.json();
               console.log(responseData);
+              localStorage.setItem("token", responseData.token.access);
+              if (localStorage.getItem("token")) {
+                navigate("/courses");
+              } else {
+                navigate("/home");
+              }
             }}
           >
             {(formik) => (
@@ -52,8 +63,13 @@ const Signin = () => {
                 <TextField name="pwd" type="password" placeholder="Password" />
                 <button
                   type="submit"
-                  className="text-[#E0E0E0] rounded-full px-5 py-2 my-8 mx-auto flex items-center bg-[#0F1035] shadow-lg shadow-[#040c166b] font-bold text-lg dark:shadow-lg dark:shadow-[#000000] hover:bg-[#382bf0] hover:-translate-y-1 duration-300"
+                  className="text-[#E0E0E0] rounded-full px-5 py-2 my-8 mx-auto flex items-center bg-[#0F1035] shadow-lg shadow-[#040c166b] font-bold text-lg dark:shadow-lg dark:shadow-[#000000] hover:bg-[#382bf0] hover:-translate-y-1 duration-300 relative" // Add relative positioning
                 >
+                  {loading && ( // Render cliploader if loading state is true
+                    <div className="absolute inset-0 flex justify-center items-center">
+                      <ClipLoader color="#ffffff" loading={true} size={20} /> // Customize ClipLoader as needed
+                    </div>
+                  )}
                   Log In
                 </button>
               </Form>
@@ -61,7 +77,11 @@ const Signin = () => {
           </Formik>
         </div>
         <div className="hidden lg:flex">
-        <img className="h-[400px] w-[700px] mt-20" src={Img} alt="Log in Image" />
+          <img
+            className="h-[400px] w-[700px] mt-20"
+            src={Img}
+            alt="Log in Image"
+          />
         </div>
       </div>
     </>

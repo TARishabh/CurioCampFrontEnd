@@ -6,9 +6,12 @@ import { Formik, Form } from "formik";
 import Img from "../assets/signup_vector.png";
 import Navbar from "../component/Navbar";
 import * as Yup from "yup";
+import { useNavigate } from 'react-router-dom';
+
 
 const Signup = () => {
   const url = import.meta.env.VITE_BASE_URL;
+  const navigate = useNavigate();
   const validate = Yup.object({
     email: Yup.string().email("Email is invalid").required("Required"),
     firstName: Yup.string().required("Required"),
@@ -42,7 +45,7 @@ const Signup = () => {
                 first_name: values.firstName,
                 last_name: values.lastName,
                 password2: values.confirmPassword,
-                date_of_birth: "2023-01-01",
+                // date_of_birth: "2023-01-01",
                 password: values.pwd,
                 gender: values.gender,
                 phone_number: values.phoneNumber,
@@ -50,7 +53,7 @@ const Signup = () => {
               // console.log(formData);
               console.log(JSON.stringify(formData));
               const response = await fetch(
-                "https://c115-2405-201-300a-e213-8017-2864-59bb-f740.ngrok-free.app/user/register/",
+                `${url}user/register/`,
                 {
                   method: "POST",
                   body: JSON.stringify(formData),
@@ -62,6 +65,14 @@ const Signup = () => {
               );
               const responseData = await response.json();
               console.log(responseData);
+              localStorage.setItem('token',responseData.token.access);
+              // console.log(localStorage.getItem('token'));
+              if (localStorage.getItem('token')){
+                navigate('/courses'); // #TODO DECIDE WHERE TO NAVIGATE
+              }
+              else {
+                navigate('/home');
+              }
             }}
           >
             {(formik) => (
