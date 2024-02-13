@@ -25,7 +25,7 @@ const Navbar = ({ isSignup, isSignin }) => {
               >
                 Courses
               </Link>
-              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to='/updatedetails'>
+              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to='/dashboard'>
                 Dashboard
               </Link>
               <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
@@ -88,7 +88,7 @@ const Navbar = ({ isSignup, isSignin }) => {
         <li className="py-3 text-3xl">
           <Link
             onClick={handleClick}
-            to="skills"
+            to="/dashboard"
             smooth={"true"}
             duration={500}
           >

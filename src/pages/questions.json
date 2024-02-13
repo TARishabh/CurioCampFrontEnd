@@ -1,0 +1,69 @@
+{
+  "statusCode": 200,
+  "results": [
+      {
+          "id": 9,
+          "content_type": "quiz",
+          "title": "Which is the Best Car?",
+          "data": "",
+          "module": 1,
+          "image_video": null,
+          "created_at": "2024-02-13T14:47:41.379351Z",
+          "updated_at": "2024-02-13T14:47:41.379380Z",
+          "content_options": [
+              {
+                  "id": 1,
+                  "options_text": "Harrier",
+                  "is_correct": true
+              },
+              {
+                  "id": 2,
+                  "options_text": "Nexon",
+                  "is_correct": false
+              },
+              {
+                  "id": 3,
+                  "options_text": "Safari",
+                  "is_correct": false
+              },
+              {
+                  "id": 4,
+                  "options_text": "XUV700",
+                  "is_correct": false
+              }
+          ]
+      },
+      {
+          "id": 10,
+          "content_type": "quiz",
+          "title": "Which is best company?",
+          "data": "",
+          "module": 1,
+          "image_video": null,
+          "created_at": "2024-02-13T19:32:54.701931Z",
+          "updated_at": "2024-02-13T19:32:54.701963Z",
+          "content_options": [
+              {
+                  "id": 5,
+                  "options_text": "Google",
+                  "is_correct": false
+              },
+              {
+                  "id": 6,
+                  "options_text": "X",
+                  "is_correct": true
+              },
+              {
+                  "id": 7,
+                  "options_text": "Facebook",
+                  "is_correct": false
+              },
+              {
+                  "id": 8,
+                  "options_text": "Shaadi.com",
+                  "is_correct": false
+              }
+          ]
+      }
+  ]
+}
