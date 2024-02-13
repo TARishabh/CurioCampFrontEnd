@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PremiumCard from '../component/PremiumCard';
+import CourseCard from '../component/CourseCard';
 
 const PurchasedCourses = () => {
   const [courses, setCourses] = useState([]);
   const url = import.meta.env.VITE_BASE_URL;
 //   console.log(url)
   useEffect(() => {
-    
     const fetchPurchasedCourses = async () => {
       try {
         const response = await fetch(`${url}api/courses/?purchased=true&user=1`);
@@ -31,7 +31,7 @@ const PurchasedCourses = () => {
           key={course.id}
           title={course.title}
           description={course.description}
-          imageUrl={course.image}
+          image={course.image}
         />
       ))}
     </div>
