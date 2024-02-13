@@ -20,6 +20,10 @@ import Dashboard from "./pages/Dashboard";
 import PurchasedCourses from "./pages/PurchasedCourses";
 import MCQpage from "./pages/MCQpage";
 import VideoPage from "./pages/VideoPage";
+import VideoCallComponent from './pages/VideoCallComponent '
+import EditProfile from './pages/EditProfile'
+import PurchasedCourses from './pages/PurchasedCourses'
+import MCQ from './pages/MCQ'
 
 const App = () => {
   return (
@@ -38,7 +42,8 @@ const App = () => {
         <Route path="/livevideo" element={<VideoCallComponent />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/purchasedcourses" element={<PurchasedCourses />} />
-        <Route path="/*" element={<Error />} />
+        <Route path="/mcqs" element={<MCQ />} />
+        <Route path='/*' element={<Error />} />
       </Routes>
     </>
   );
