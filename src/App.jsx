@@ -17,6 +17,7 @@ import CoursePage from './pages/CoursePage'
 // import LiveStream from './pages/Agora'
 import VideoCallComponent from './pages/VideoCallComponent '
 import EditProfile from './pages/EditProfile'
+import PurchasedCourses from './pages/PurchasedCourses'
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         {/* <Route path="/stream" element={<LiveStream />} /> */}
         <Route path="/livevideo" element={<VideoCallComponent />} />
         <Route path="/updatedetails" element={<EditProfile />} />
+        <Route path="/purchasedcourses" element={<PurchasedCourses />} />
         <Route path='/*' element={<Error />} />
       </Routes>
     </>

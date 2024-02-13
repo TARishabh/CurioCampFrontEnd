@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo_transparent.png";
+import Logo from "../assets/logo_Transparent.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = ({ isSignup, isSignin }) => {
@@ -25,7 +25,7 @@ const Navbar = ({ isSignup, isSignin }) => {
               >
                 Courses
               </Link>
-              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
+              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to='/updatedetails'>
                 Dashboard
               </Link>
               <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">

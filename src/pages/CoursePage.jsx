@@ -15,8 +15,8 @@ const CoursePage = () => {
   const [course, setCourse] = useState([]);
   //   let scrollStop = false;
 
+  const url = import.meta.env.VITE_BASE_URL;
   useEffect(() => {
-    const url = import.meta.env.VITE_BASE_URL;
     fetch(`${url}api/courses/${id}/`)
       .then((response) => {
         if (!response.ok) {

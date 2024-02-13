@@ -2,6 +2,9 @@ import React from 'react';
 import './premiumcard.css';
 
 const PremiumCard = ({ title, description, imageUrl }) => {
+    console.log(title)
+    console.log(description)
+    console.log(imageUrl)
     return (
     <div className="container">
         <div className="card" style={{ '--clr': '#009688' }}>
@@ -13,7 +16,7 @@ const PremiumCard = ({ title, description, imageUrl }) => {
                 <p>{description}</p>
             </div>
         </div>
-        <div className="card" style={{ '--clr': '#ff3e7f' }}>
+        {/* <div className="card" style={{ '--clr': '#ff3e7f' }}>
             <div className="imgBx">
                 <img src="img2.jpg" alt="Image 2"/>
             </div>
@@ -30,7 +33,7 @@ const PremiumCard = ({ title, description, imageUrl }) => {
                 <h2>{title}</h2>
                 <p>{description}</p>
             </div>
-        </div>
+        </div> */}
     </div>
     );
 };
