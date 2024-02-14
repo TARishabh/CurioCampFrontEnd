@@ -7,10 +7,10 @@ import "./App.css";
 import Signin from "./pages/Signin";
 // import Card from './component/Card'
 // import Modal from './component/Modal'
-import Hero from "./pages/Home";
+import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Error from "./pages/Error";
-import Home from "./pages/Razorpay";
+import Razorpay from "./pages/Razorpay";
 import Courses from "./pages/Courses";
 import CoursePage from "./pages/CoursePage";
 // import ChatComponent from './pages/ChatComponent'
@@ -28,20 +28,18 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/pay" element={<Home />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/courses/:id" element={<CoursePage />} />
-        <Route path="/courses/:id/mcq" element={<MCQpage />} />
-        <Route path="/courses/:id/video" element={<VideoPage />} />
-        {/* <Route path="/chat" element={<ChatComponent />} /> */}
-        {/* <Route path="/stream" element={<LiveStream />} /> */}
-        <Route path="/livevideo" element={<VideoCallComponent />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/purchasedcourses" element={<PurchasedCourses />} />
-        <Route path='/*' element={<Error />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/signin" element={<Signin />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/pay" element={<Razorpay />} />
+        <Route exact path="/courses" element={<Courses />} />
+        <Route exact path="/courses/:id" element={<CoursePage />} />
+        <Route exact path="/courses/:id/mcq" element={<MCQpage />} />
+        <Route exact path="/courses/:id/video" element={<VideoPage />} />
+        <Route exact path="/livevideo" element={<VideoCallComponent />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/purchasedcourses" element={<PurchasedCourses />} />
+        <Route exact path='/*' element={<Error />} />
       </Routes>
     </>
   );
