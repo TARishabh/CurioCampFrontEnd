@@ -9,6 +9,7 @@ import Details from "../courseContent/Details";
 import Instructor from "../courseContent/Instructor";
 import Review from "../courseContent/Review";
 import PaymentCard from "../courseContent/PaymentCard";
+import Search from "../component/Search";
 
 const CoursePage = () => {
   const { id } = useParams();
@@ -55,7 +56,7 @@ const CoursePage = () => {
         <p className="font-semibold">₹{course.price}</p>
       </div>
       <div className="w-full md:w-2/3">
-        <ul className="m-2 p-4 sticky top-2 bg-white rounded-sm z-10">
+        <ul className="m-2 p-4 sticky top-2 bg-white rounded-sm z-10 flex flex-wrap justify-center md:justify-start">
           <Link
             activeClass="active"
             className="cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold bg-[#E7E9E8] hover:bg-[#B6DEEF]"
@@ -112,7 +113,7 @@ const CoursePage = () => {
         <Details />
         <Instructor />
         <Review />
-        <PaymentCard price={course.price}/>
+        <PaymentCard price={course.price}/> 
       </div>
     </div>
   );
