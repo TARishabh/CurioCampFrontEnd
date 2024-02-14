@@ -71,10 +71,11 @@ const MCQpage = () => {
   };
 
   return (
-    <div className="flex flex-col w-screen px-5 h-screen items-center text-black">
+    <div className="conatiner relative h-screen">
+    <div className="flex absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] flex-col mt-10 w-screen px-5 h-screen items-center text-black">
       {!quizSubmitted ? (
         <>
-          <div className="p-4 m-3 w-full lg:w-3/5 shadow-lg rounded-lg">
+        <div className="p-4 m-3 w-full lg:w-3/5 shadow-lg rounded-2xl">
             <h4 className="mt-1 text-md">
               Question {currentQuestionIndex + 1} of {questions.results.length}
             </h4>
@@ -83,7 +84,7 @@ const MCQpage = () => {
             </div>
             {questions.results[currentQuestionIndex].content_options.map(
               (answer, answerIndex) => (
-                <div key={answerIndex} className="ml-3">
+                <div key={answerIndex} className="ml-3 flex border-2  px-4 py-4 rounded-2xl m-2 border-indigo-600">
                   <input
                     type="radio"
                     name={`question_${currentQuestionIndex}`}
@@ -102,16 +103,16 @@ const MCQpage = () => {
               )
             )}
           </div>
-          <div className="flex">
+          <div className="flex gap-96">
             <button
-              className="btn"
+              className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-2xl "
               onClick={handlePreviousQuestion}
               disabled={currentQuestionIndex === 0}
             >
               Previous
             </button>
             <button
-              className="btn"
+              className=" px-12 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-2xl "
               onClick={handleNextQuestion}
               disabled={
                 currentQuestionIndex === questions.results.length - 1
@@ -120,7 +121,7 @@ const MCQpage = () => {
               Next
             </button>
           </div>
-        {currentQuestionIndex === questions.results.length -1  && <button className="btn-submit" onClick={handleSubmit}>
+        {currentQuestionIndex === questions.results.length -1  && <button className="btn-submit px-12 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-2xl " onClick={handleSubmit}>
             Submit Answers
           </button>}
         </>
@@ -130,6 +131,7 @@ const MCQpage = () => {
           <h2>You got {correctAnswersCount} correct answers.</h2>
         </div>
       )}
+    </div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ import Details from "../courseContent/Details";
 import Instructor from "../courseContent/Instructor";
 import Review from "../courseContent/Review";
 import PaymentCard from "../courseContent/PaymentCard";
-import Search from "../component/Search";
+// import Search from "../component/Search";
 
 const CoursePage = () => {
   const { id } = useParams();
