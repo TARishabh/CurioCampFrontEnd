@@ -17,11 +17,11 @@ import CoursePage from "./pages/CoursePage";
 // import LiveStream from './pages/Agora'
 import VideoCallComponent from "./pages/VideoCallComponent ";
 import Dashboard from "./pages/Dashboard";
-import PurchasedCourses from "./pages/PurchasedCourses";
+// import PurchasedCourses from "./pages/PurchasedCourses";
 import MCQpage from "./pages/MCQpage";
 import VideoPage from "./pages/VideoPage";
-import VideoCallComponent from './pages/VideoCallComponent '
-import EditProfile from './pages/EditProfile'
+// import VideoCallComponent from './pages/VideoCallComponent '
+// import EditProfile from './pages/EditProfile'
 import PurchasedCourses from './pages/PurchasedCourses'
 import MCQ from './pages/MCQ'
 

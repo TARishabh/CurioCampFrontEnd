@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo_Transparent.png";
+import Logo from "../assets/logo_transparent.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = ({ isSignup, isSignin }) => {
