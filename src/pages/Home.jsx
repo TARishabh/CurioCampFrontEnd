@@ -4,6 +4,9 @@ import Navbar from "../component/Navbar";
 import SectionTitle from "../component/sectiontitle";
 import heroImg from "../assets/hero.png";
 import Container from "../component/container";
+import Testimonials from "../component/testimonials";
+import Benefits from "../component/benefits";
+import Footer from "../component/footer";
 
 const Home = () => {
   return (
@@ -62,26 +65,31 @@ const Home = () => {
           <Link to="/courses">View Courses</Link>
         </div>
       </section> */}
+
+      <SectionTitle
+        pretitle="Explore More"
+        title="Unlock Knowledge with CurioCamp">
+        Embark on a journey of discovery with Curiocamp's curated resources and collaborative study groups, fostering a community-driven approach to learning.
+      </SectionTitle>
+
+      <div className="flex flex-col lg:flex-row ">
       <SectionTitle
         pretitle="CurioCamp Benefits"
         title=" Why should you use CurioCamp">
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+        Curiocamp offers curated, interactive learning experiences with collaborative study groups and personalized recommendations, fostering a vibrant community for lifelong learners. With trusted partnerships and a user-friendly interface, Curiocamp empowers individuals to explore diverse educational content and engage in meaningful discussions, making it the go-to platform for enriching learning journeys.
       </SectionTitle>
-      <SectionTitle
-        pretitle="Watch a video"
-        title="Learn how to fullfil your needs">
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
-      </SectionTitle>
+      <Benefits/>
+      </div>
+      
+      
       <SectionTitle
         pretitle="Testimonials"
         title="Here's what our customers said">
         Testimonails is a great way to increase the brand trust and awareness.
         Use this section to highlight your popular customers.
       </SectionTitle>
+      <Testimonials/>
+      <Footer />
     </div>
   );
 };
