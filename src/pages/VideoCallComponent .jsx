@@ -63,6 +63,8 @@ const client = createClient({
 let audioTrack
 let videoTrack
 const VideoCallComponent = ()=> {
+  const agora_appId = import.meta.env.VITE_Agora_appid
+  const agora_token = import.meta.env.VITE_AGORA_TOKEN
   const [isAudioOn, setIsAudioOn] = useState(false)
   const [isVideoOn, setIsVideoOn] = useState(false)
   const [isAudioPubed, setIsAudioPubed] = useState(false)
@@ -110,10 +112,16 @@ const VideoCallComponent = ()=> {
 
     client.on("user-published", onUserPublish)
 
+    // await client.join(
+    //   appid.current,
+    //   channel.current,
+    //   token.current || null,
+    //   null
+    // )
     await client.join(
-      appid.current,
+      agora_appId,
       channel.current,
-      token.current || null,
+      agora_token,
       null
     )
     setIsJoined(true)
@@ -185,8 +193,8 @@ const VideoCallComponent = ()=> {
           </a>
           {`) `}
         </h3>
-        <input
-          defaultValue={appid.current}
+        {/* <input
+          defaultValue={agora_appId}
           placeholder="appid"
           onChange={e => (appid.current = e.target.value)}
         />
@@ -194,7 +202,7 @@ const VideoCallComponent = ()=> {
           defaultValue={token.current}
           placeholder="token"
           onChange={e => (token.current = e.target.value)}
-        />
+        /> */}
         <h3>Please input the channel name</h3>
         <input
           defaultValue={channel.current}

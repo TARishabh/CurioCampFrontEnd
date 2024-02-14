@@ -17,7 +17,8 @@ const CourseContent = () => {
   useEffect(() => {
     localStorage.setItem("token",import.meta.env.VITE_USER_TOKEN)
     const url = import.meta.env.VITE_BASE_URL;
-    const token = localStorage.getItem('token');
+    // const token = localStorage.getItem('token');
+    const token = import.meta.env.VITE_TOKEN;
     fetch(`${url}api/modules/?course_id=${id}`, {
         method: 'GET',
         headers: {
@@ -29,11 +30,10 @@ const CourseContent = () => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
-        //   console.log(response);
           return response.json();
         })
         .then((data) => {
-        //   console.log(data.results[0].title);
+          console.log(data.results);
           setCourse(data.results);
         })
         .catch((error) => {
