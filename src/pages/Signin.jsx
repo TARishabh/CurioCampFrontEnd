@@ -46,6 +46,7 @@ const Signin = () => {
               const responseData = await response.json();
               console.log(responseData);
               localStorage.setItem("token", responseData.token.access);
+              localStorage.setItem("user_id", responseData.results.id);
               if (localStorage.getItem("token")) {
                 navigate("/courses");
               } else {

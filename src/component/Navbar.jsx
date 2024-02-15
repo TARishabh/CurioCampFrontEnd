@@ -6,14 +6,22 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Navbar = ({ isSignup, isSignin }) => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
+  let isUserAuthenticated;
+  if (localStorage.getItem("token")) {
+    isUserAuthenticated = true;
+  } else {
+    isUserAuthenticated = false;
+  }
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  }
   return (
     <>
       <div className="hidden lg:flex">
         <div className="p-4 h-[70px] w-full flex justify-center shadow-2xl">
-        <img src={Logo} alt="Logo" className="h-[40px] absolute left-3" />
+          <img src={Logo} alt="Logo" className="h-[40px] absolute left-3" />
           <div>
             <ul className="flex gap-5">
-              
               <Link
                 className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600"
                 to="/"
@@ -26,10 +34,16 @@ const Navbar = ({ isSignup, isSignin }) => {
               >
                 Courses
               </Link>
-              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600" to='/dashboard'>
+              <Link
+                className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600"
+                to="/dashboard"
+              >
                 Dashboard
               </Link>
-              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600" to='/collaborate'>
+              <Link
+                className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600"
+                to="/collaborate"
+              >
                 Collaborate
               </Link>
               <Link className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600">
@@ -38,15 +52,23 @@ const Navbar = ({ isSignup, isSignin }) => {
             </ul>
           </div>
           <div className="absolute right-3 top-3">
-            {isSignup && (
-              <div className="py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300">
-                <Link to="/signin">Log in</Link>
+            {isUserAuthenticated ? (
+              <div onClick={handleLogout} className="py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300">
+                <Link to="/signin">Log out</Link>
               </div>
-            )}
+            ) : (
+              <div>
+                {isSignup && (
+                  <div className="py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300">
+                    <Link to="/signin">Log in</Link>
+                  </div>
+                )}
 
-            {isSignin && (
-              <div className="py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300">
-                <Link to="/signup">Sign Up</Link>
+                {isSignin && (
+                  <div className="py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300">
+                    <Link to="/signup">Sign Up</Link>
+                  </div>
+                )}
               </div>
             )}
           </div>
