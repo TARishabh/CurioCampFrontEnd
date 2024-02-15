@@ -33,7 +33,8 @@ const PaymentCard = ({ price }) => {
 
   const razorPay = () => {
     // Get the authentication token from localStorage or wherever it's stored
-    const authToken = localStorage.getItem("token");
+    // const authToken = localStorage.getItem("token");
+    const authToken = import.meta.env.VITE_TOKEN
 
     // Create the axios instance with the authentication token
     const axiosInstance = axios.create({
@@ -112,6 +113,7 @@ const PaymentCard = ({ price }) => {
     //   <button type="button" className="btn btn-light fw-semibold py-3" onClick={razorPay}>Upgrad now</button>
     // </div>
     // <div className="sticky top-1">
+
      <div className="m-4">
       <div className="sticky flex w-full max-w-[800px] border-4 border-indigo-500 flex-col rounded-xl bg-gradient-to-tr from-[#E7E9E8] to-[#f4f4f3] bg-clip-border p-8 text-black shadow-lg">
         <div className="relative m-0 mb-8 w-full overflow-hidden rounded-none border-b border-white/10 bg-transparent bg-clip-border pb-8 text-center  shadow-none">
@@ -242,6 +244,7 @@ const PaymentCard = ({ price }) => {
             className="block w-full select-none text-white rounded-lg bg-indigo-600 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
             data-ripple-dark="true"
+            onClick={razorPay}
           >
             Buy Now
           </button>
@@ -249,7 +252,7 @@ const PaymentCard = ({ price }) => {
       </div>
       <div className="w-full pt-5 px-4 mb-8 mx-auto ">
       </div>
-      </div>
+    </div>
     // </div>
   );
 };
