@@ -12,9 +12,9 @@ import PurchesedCourses from "../dashboardContent/PurchesedCourses";
 import CompletedCourses from "../dashboardContent/CompletedCourses";
 
 const Dashboard = () => {
-  const [ completedCourses,  setCompletedCourses] = useState(true);
+  const [ completedCourses,  setCompletedCourses] = useState(false);
   const [ ongoingCourses,  setOngoingCourses] = useState(false);
-  const [ purchesedCourses,  setPurchesedCourses] = useState(false);
+  const [ purchesedCourses,  setPurchesedCourses] = useState(true);
   const [ updateDetails,  setUpdateDetails] = useState(false);
 
   return (

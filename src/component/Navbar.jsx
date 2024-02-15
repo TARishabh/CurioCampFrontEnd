@@ -121,11 +121,11 @@ const Navbar = ({ isSignup, isSignin }) => {
         <li className="py-3 text-3xl">
           <Link
             onClick={handleClick}
-            to="projects"
+            to="/collaborate"
             smooth={"true"}
             duration={500}
           >
-            Blog
+            Collaborate
           </Link>
         </li>
         <li className="py-3 text-3xl">

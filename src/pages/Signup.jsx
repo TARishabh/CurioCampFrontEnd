@@ -50,8 +50,6 @@ const Signup = () => {
                 gender: values.gender,
                 phone_number: values.phoneNumber,
               };
-              // console.log(formData);
-              console.log(JSON.stringify(formData));
               const response = await fetch(
                 `${url}user/register/`,
                 {
@@ -64,7 +62,6 @@ const Signup = () => {
                 }
               );
               const responseData = await response.json();
-              console.log(responseData);
               localStorage.setItem('token',responseData.token.access);
               // console.log(localStorage.getItem('token'));
               if (localStorage.getItem('token')){

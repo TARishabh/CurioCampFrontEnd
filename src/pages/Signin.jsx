@@ -34,7 +34,6 @@ const Signin = () => {
             onSubmit={async (values, formik) => {
               setLoading(true); // Set loading state to true on form submission
               const formData = { email: values.email, password: values.pwd };
-              console.log(JSON.stringify(formData));
               const response = await fetch(`${url}user/login/`, {
                 method: "POST",
                 body: JSON.stringify(formData),
@@ -44,7 +43,6 @@ const Signin = () => {
                 },
               });
               const responseData = await response.json();
-              console.log(responseData);
               localStorage.setItem("token", responseData.token.access);
               localStorage.setItem("user_id", responseData.results.id);
               if (localStorage.getItem("token")) {
