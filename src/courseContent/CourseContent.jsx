@@ -19,7 +19,7 @@ const CourseContent = () => {
   const { id } = useParams();
   // const handleCompleted
   useEffect(() => {
-    localStorage.setItem("token", import.meta.env.VITE_USER_TOKEN);
+    // localStorage.setItem("token", import.meta.env.VITE_USER_TOKEN);
     const url = import.meta.env.VITE_BASE_URL;
     // const token = localStorage.getItem('token');
     const token = import.meta.env.VITE_TOKEN;
@@ -63,12 +63,12 @@ const CourseContent = () => {
             {module.content_desc.map((content, index) => (
               <div className="m-2" key={index}>
                 {content.content_type === "video" && (
-                  <div className="flex gap-2">
+                  <Link to={`/courses/${id}/video`} className="flex gap-2">
                     <div className="mt-1 ">
                       <FaRegCirclePlay />
                     </div>
                     <h1>{content.title}</h1>
-                  </div>
+                  </Link>
                 )}
                 {/* <button type="submit" onClick={handleCompleted}>
                   is completed

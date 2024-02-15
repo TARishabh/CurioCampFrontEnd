@@ -32,7 +32,7 @@ const App = () => {
         <Route exact path="/signin" element={<Signin />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/pay" element={<Razorpay />} />
-        <Route exact path="/courses" element={<Courses />} />
+        <Route exact path="/courses/*" element={<Courses />} />
         <Route exact path="/courses/:id" element={<CoursePage />} />
         <Route exact path="/courses/:id/mcq" element={<MCQpage />} />
         <Route exact path="/courses/:id/video" element={<VideoPage />} />

@@ -19,7 +19,7 @@ const Navbar = ({ isSignup, isSignin }) => {
     <>
       <div className="hidden lg:flex">
         <div className="p-4 h-[70px] w-full flex justify-center shadow-2xl">
-          <img src={Logo} alt="Logo" className="h-[40px] absolute left-3" />
+          <img src={Logo} alt="Logo" className="h-[40px] absolute left-3 top-4" />
           <div>
             <ul className="flex gap-5">
               <Link
