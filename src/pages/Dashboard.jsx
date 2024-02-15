@@ -22,7 +22,7 @@ const Dashboard = () => {
       <Navbar/>
       <ul className="m-2 p-4 rounded-sm z-10">
           <button
-            className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${updateDetails? "bg-[#0369A1]" : "bg-[#E7E9E8]"}`}
+            className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:text-white hover:bg-[#4F46E5] ${updateDetails? "bg-[#4F46E5] text-white" : "bg-[#f4f4fe]"}`}
             onClick={() => {
               setUpdateDetails(true);
               setCompletedCourses(false);
@@ -33,7 +33,7 @@ const Dashboard = () => {
             Update Details
           </button>
           <button
-            className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${completedCourses? "bg-[#0369A1]" : "bg-[#E7E9E8]"}`}
+            className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:text-white hover:bg-[#4F46E5] ${completedCourses? "bg-[#4F46E5] text-white" : "bg-[#f4f4fe]"}`}
             onClick={() => {
               setUpdateDetails(false);
               setCompletedCourses(true);
@@ -44,7 +44,7 @@ const Dashboard = () => {
             Completed Courses
           </button>
           <button
-            className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${ongoingCourses? "bg-[#0369A1]" : "bg-[#E7E9E8]"}`}
+            className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:text-white hover:bg-[#4F46E5] ${ongoingCourses? "bg-[#4F46E5] text-white" : "bg-[#f4f4fe]"}`}
             onClick={() => {
               setUpdateDetails(false);
               setCompletedCourses(false);
@@ -55,7 +55,7 @@ const Dashboard = () => {
             Ongoing Courses
           </button>
           <button
-            className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${purchesedCourses? "bg-[#0369A1]" : "bg-[#E7E9E8]"}`}
+            className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:text-white hover:bg-[#4F46E5] ${purchesedCourses? "bg-[#4F46E5] text-white" : "bg-[#f4f4fe]"}`}
             onClick={() => {
               setUpdateDetails(false);
               setCompletedCourses(false);

@@ -23,7 +23,7 @@ const Collaborate = () => {
             <Navbar />
             <ul className="m-2 p-4 rounded-sm z-10">
             <button
-                    className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${joinChatRoom ? "bg-[#0369A1]" : "bg-[#E7E9E8]"}`}
+                    className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${joinChatRoom ? "bg-[#4F46E5]" : "bg-[#E7E9E8]"}`}
                     onClick={() => {
                         setJoinChatRoom(true);
                         setJoinLiveStream(false);
@@ -34,7 +34,7 @@ const Collaborate = () => {
                     Join Chat Room 
                 </button>
                 <button
-                    className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${joinLiveStream ? "bg-[#0369A1]" : "bg-[#E7E9E8]"}`}
+                    className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${joinLiveStream ? "bg-[#4F46E5]" : "bg-[#E7E9E8]"}`}
                     onClick={() => {
                         setJoinLiveStream(true);
                         setJoinChatRoom(false);
@@ -45,7 +45,7 @@ const Collaborate = () => {
                     Join Live Stream
                 </button>
                 <button
-                    className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${joinVideoRoom ? "bg-[#0369A1]" : "bg-[#E7E9E8]"}`}
+                    className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${joinVideoRoom ? "bg-[#4F46E5]" : "bg-[#E7E9E8]"}`}
                     onClick={() => {
                         setJoinLiveStream(false);
                         setJoinChatRoom(false);
@@ -56,7 +56,7 @@ const Collaborate = () => {
                     Join Video Room
                 </button>
                 <button
-                    className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${joinAudioRoom ? "bg-[#0369A1]" : "bg-[#E7E9E8]"}`}
+                    className={`cursor-pointer mx-2 py-2 px-3 rounded-full shadow-xl inline font-bold hover:bg-[#B6DEEF] ${joinAudioRoom ? "bg-[#4F46E5]" : "bg-[#E7E9E8]"}`}
                     onClick={() => {
                         setJoinLiveStream(false);
                         setJoinChatRoom(false);
