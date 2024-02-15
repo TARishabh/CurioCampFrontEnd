@@ -15,24 +15,24 @@ const Navbar = ({ isSignup, isSignin }) => {
             <ul className="flex gap-5">
               
               <Link
-                className="text-[#707070] hover:text-black hover:border-b-2 border-black"
+                className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600"
                 to="/"
               >
                 Home
               </Link>
               <Link
-                className="text-[#707070] hover:text-black hover:border-b-2 border-black"
+                className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600"
                 to="/courses"
               >
                 Courses
               </Link>
-              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to='/dashboard'>
+              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600" to='/dashboard'>
                 Dashboard
               </Link>
-              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to='/collaborate'>
+              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600" to='/collaborate'>
                 Collaborate
               </Link>
-              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
+              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-indigo-600">
                 Contact Us
               </Link>
             </ul>

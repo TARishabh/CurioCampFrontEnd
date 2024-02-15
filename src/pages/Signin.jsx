@@ -24,7 +24,7 @@ const Signin = () => {
     <>
       <Navbar isSignin />
       <div className="flex justify-around">
-        <div className="w-full mt-20 flex justify-center items-center text-black">
+        <div className="w-full lg:w-1/2 mt-20 flex justify-center items-center text-black">
           <Formik
             initialValues={{
               email: "",
@@ -56,14 +56,14 @@ const Signin = () => {
             {(formik) => (
               <Form className="flex flex-col p-5 max-w-[400px] w-full">
                 <div className="pb-8 flex justify-center">
-                  <p className="text-4xl font-bold inline">Log In</p>
+                  <p className="text-4xl text-indigo-600 font-bold inline">Log In</p>
                 </div>
 
                 <TextField name="email" type="email" placeholder="Email" />
                 <TextField name="pwd" type="password" placeholder="Password" />
                 <button
                   type="submit"
-                  className="text-[#E0E0E0] rounded-full px-5 py-2 my-8 mx-auto flex items-center bg-[#0F1035] shadow-lg shadow-[#040c166b] font-bold text-lg dark:shadow-lg dark:shadow-[#000000] hover:bg-[#382bf0] hover:-translate-y-1 duration-300 relative" // Add relative positioning
+                  className="text-[#E0E0E0] rounded-full px-5 py-2 my-8 mx-auto flex items-center bg-[#4F46E5] shadow-lg shadow-[#040c166b] font-bold text-lg dark:shadow-lg dark:shadow-[#959494] hover:bg-[#382bf0] hover:-translate-y-1 duration-300 relative" // Add relative positioning
                 >
                   {loading && ( // Render cliploader if loading state is true
                     <div className="absolute inset-0 flex justify-center items-center">
@@ -78,7 +78,7 @@ const Signin = () => {
         </div>
         <div className="hidden lg:flex">
           <img
-            className="h-[400px] w-[700px] mt-20"
+            className="mr-40 w-[700px] mt-10"
             src={Img}
             alt="Log in Image"
           />

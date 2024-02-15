@@ -78,9 +78,9 @@ const Signup = () => {
             {(formik) => (
               <Form className="mx-3 flex flex-col max-w-[500px]">
                 <div className="pb-8 flex justify-center">
-                  <p className="text-4xl font-bold inline">Sign Up</p>
+                  <p className="text-4xl text-indigo-600 font-bold inline">Sign Up</p>
                 </div>
-                <div className="">
+                <div className=" border-indigo-600">
                   <div className="grid grid-cols-2 gap-3">
                     <TextField
                       name="firstName"
@@ -139,7 +139,7 @@ const Signup = () => {
                 />
                 <button
                   type="submit"
-                  className="text-[#E0E0E0] rounded-full px-5 py-2 my-8 mx-auto flex items-center bg-[#0F1035] shadow-lg shadow-[#040c166b] font-bold text-lg dark:shadow-lg dark:shadow-[#000000] hover:bg-[#382bf0] hover:-translate-y-1 duration-300"
+                  className="text-[#E0E0E0] rounded-full px-5 py-2 my-8 mx-auto flex items-center bg-[#4F46E5] shadow-lg shadow-[#040c166b] font-bold text-lg dark:shadow-lg dark:shadow-[#000000] hover:bg-[#382bf0] hover:-translate-y-1 duration-300"
                 >
                   Register
                 </button>
@@ -149,7 +149,7 @@ const Signup = () => {
         </div>
         <div className="hidden lg:flex">
           <img
-            className="h-[300px] w-[400px] mt-20"
+            className="w-[800px] h-[700px] mt-10"
             src={Img}
             alt="Log in Image"
           />
