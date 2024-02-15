@@ -29,8 +29,8 @@ const Navbar = ({ isSignup, isSignin }) => {
               <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to='/dashboard'>
                 Dashboard
               </Link>
-              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
-                Blog
+              <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black" to='/collaborate'>
+                Collaborate
               </Link>
               <Link className="text-[#707070] hover:text-black hover:border-b-2 border-black">
                 Contact Us
