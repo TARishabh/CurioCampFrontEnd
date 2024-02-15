@@ -103,7 +103,7 @@ const MCQpage = () => {
               )
             )}
           </div>
-          <div className="flex gap-96">
+          <div className="flex gap-10 lg:gap-96">
             <button
               className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-2xl "
               onClick={handlePreviousQuestion}

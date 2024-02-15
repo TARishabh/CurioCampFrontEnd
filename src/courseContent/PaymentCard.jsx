@@ -113,8 +113,8 @@ const PaymentCard = ({ price }) => {
     // </div>
     // <div className="sticky top-1">
      <div className="m-4">
-      <div className="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-gradient-to-tr from-[#E7E9E8] to-[#6d6d6d] bg-clip-border p-8 text-black shadow-lg">
-        <div className="relative m-0 mb-8 overflow-hidden rounded-none border-b border-white/10 bg-transparent bg-clip-border pb-8 text-center  shadow-none">
+      <div className="sticky flex w-full max-w-[800px] border-4 border-indigo-500 flex-col rounded-xl bg-gradient-to-tr from-[#E7E9E8] to-[#f4f4f3] bg-clip-border p-8 text-black shadow-lg">
+        <div className="relative m-0 mb-8 w-full overflow-hidden rounded-none border-b border-white/10 bg-transparent bg-clip-border pb-8 text-center  shadow-none">
           <p className="block font-sans text-sm font-normal uppercase leading-normal  antialiased">
             standard
           </p>
@@ -239,7 +239,7 @@ const PaymentCard = ({ price }) => {
         </div>
         <div className="mt-12 p-0">
           <button
-            className="block w-full select-none rounded-lg bg-white py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className="block w-full select-none text-white rounded-lg bg-indigo-600 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
             data-ripple-dark="true"
           >

@@ -59,8 +59,8 @@ const PremiumCard = ({ id,title, image, description }) => {
         <div className=" flex flex-col gap-2">
           <h2 className="font-bold text-lg">{title}</h2>
           {/* <p className='font-semibold'>{description}</p> */}
-          {/* <p className="flex gap-2 text-[#0369A1]">
-            <IoBookOutline className="mt-[5px] text-[#0369A1]" />{" "}
+          {/* <p className="flex gap-2 text-[#4F46E5]">
+            <IoBookOutline className="mt-[5px] text-[#4F46E5]" />{" "}
             {course_modules} Modules
           </p> */}
           {/* <p className="text-sm">{keyword}</p> */}

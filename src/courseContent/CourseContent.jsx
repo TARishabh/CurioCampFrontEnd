@@ -47,19 +47,19 @@ const CourseContent = () => {
   return (
     <div
       name="CourseContent"
-      className="m-4 p-3 max-w-[800px] shadow-lg w-full rounded-2xl"
+      className="m-4 p-3 max-w-[800px] shadow-lg rounded-2xl"
     >
-      <h1 className="font-bold text-xl ml-6 mb-3">Course Content</h1>
+      <h1 className="font-bold text-indigo-600 text-xl mb-3">Course Content</h1>
       {/* {console.log(Array.isArray(course))} */}
       {course.map((module) => (
         <Accordion
-          className=" gap-0 flex font-semibold  flex-col items-left w-full px-2 py-2 text-lg text-left text-gray-800 rounded-lg  bg-gray-50 hover:bg-gray-100 hover:translate-y-1 duration-200 after:text-[#2F57EF]"
+          className="flex font-semibold border-b flex-col items-left w-full px-2 py-2 text-lg text-left rounded-2xl  bg-[#f4f4fe] hover:text-indigo-600 hover:translate-y-1 duration-200"
           key={module.id}
         >
           <AccordionSummary expandIcon={<MdOutlineExpandMore />} className="">
             <p>{module.title}</p>
           </AccordionSummary>
-          <AccordionDetails className="text-left">
+          <AccordionDetails className="text-left text-gray-600 hover:text-indigo-600">
             {module.content_desc.map((content, index) => (
               <div className="m-2" key={index}>
                 {content.content_type === "video" && (
@@ -79,12 +79,12 @@ const CourseContent = () => {
         </Accordion>
       ))}
       <Accordion
-        className=" gap-0 flex font-semibold  flex-col items-left w-full px-2 py-2 text-lg text-left text-gray-800 rounded-lg  bg-gray-50 hover:bg-gray-100 hover:translate-y-1 duration-200 after:text-[#2F57EF]"
+        className=" flex font-semibold flex-col items-left w-full px-2 py-2 text-lg text-left rounded-2xl  bg-[#f4f4fe] hover:text-indigo-600  hover:translate-y-1 duration-200"
       >
         <AccordionSummary expandIcon={<MdOutlineExpandMore />} className="">
           <p>Course Quiz</p>
         </AccordionSummary>
-        <AccordionDetails className="text-left">
+        <AccordionDetails className="text-left  text-gray-600 hover:text-indigo-600">
           <div className="m-2">
             <Link to={`/courses/${id}/mcq`} className="flex gap-2">
               <div className="mt-1 ">
