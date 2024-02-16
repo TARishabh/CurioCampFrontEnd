@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import questions from "./questions.json";
+import questions from "./pathquestions.json";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const MCQpage = () => {
+const Learningpath = () => {
   const { id } = useParams();
   const url = import.meta.env.VITE_BASE_URL;
   const module_id = localStorage.getItem("module_id");
@@ -138,8 +138,8 @@ const MCQpage = () => {
           </>
         ) : (
           <div className="flex absolute top-1/2 shadow-lg left-1/2 -translate-x-[50%] -translate-y-[50%] flex-col px-5 py-5 gap-1 rounded-xl items-center text-black">
-            <h1 className="text-2xl font-bold">Quiz Submitted!</h1>
-            <h2>You got {correctAnswersCount} correct answers.</h2>
+            <h1 className="text-2xl font-bold">Responses taken!</h1>
+            <h2>Creating a learning Path.</h2>
             <button>
               <Link to="/courses/1">
                 <button className="btn-submit px-8 mt-3 py-2 text-lg font-medium text-center text-white bg-indigo-600 rounded-2xl">
@@ -154,4 +154,4 @@ const MCQpage = () => {
   );
 };
 
-export default MCQpage;
+export default Learningpath;

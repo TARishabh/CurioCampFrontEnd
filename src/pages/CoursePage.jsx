@@ -9,6 +9,7 @@ import Details from "../courseContent/Details";
 import Instructor from "../courseContent/Instructor";
 import Review from "../courseContent/Review";
 import PaymentCard from "../courseContent/PaymentCard";
+import Footer from "../component/footer";
 
 const CoursePage = () => {
   const { id } = useParams();
@@ -47,7 +48,7 @@ const CoursePage = () => {
       <Navbar />
       <div className="w-full h-[300px] bg-[#D3D1F9] p-20 flex flex-col gap-2">
         <h2 className="font-bold text-4xl">{course.title}</h2>
-        <p className="font-semibold">{course.description}</p>
+        {/* <p className="font-semibold">{course.description}</p> */}
         <p className="flex gap-2">
           <IoBookOutline className="mt-[5px]" /> {course.course_modules} Modules
         </p>
@@ -116,6 +117,7 @@ const CoursePage = () => {
         </div>
         <PaymentCard price={course.price} />
       </div>
+      <Footer/>
     </div>
   );
 };

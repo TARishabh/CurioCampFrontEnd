@@ -7,6 +7,7 @@ import Container from "../component/container";
 import Testimonials from "../component/testimonials";
 import Benefits from "../component/benefits";
 import Footer from "../component/footer";
+import Card from "../component/card";
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight ">
-            Welcome to CurioCamp
+            Welcome to <span className="text-indigo-600">CurioCamp</span>
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl ">
             Discover a diverse array of courses designed to fuel your curiosity
@@ -32,7 +33,12 @@ const Home = () => {
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-full ">
                 View Courses
               </Link>
-              
+              <Link
+                to="/pathquestions"
+                rel="noopener"
+                className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-full ">
+                Get a Personalized Learning Path
+              </Link>
                 
             </div>
           </div>
@@ -65,7 +71,7 @@ const Home = () => {
           <Link to="/courses">View Courses</Link>
         </div>
       </section> */}
-
+      <Card/>
       <SectionTitle
         pretitle="Explore More"
         title="Unlock Knowledge with CurioCamp">

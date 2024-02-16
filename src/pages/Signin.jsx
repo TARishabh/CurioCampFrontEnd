@@ -67,7 +67,7 @@ const Signin = () => {
                 >
                   {loading && ( // Render cliploader if loading state is true
                     <div className="absolute inset-0 flex justify-center items-center">
-                      <ClipLoader color="#ffffff" loading={true} size={20} /> // Customize ClipLoader as needed
+                      {/* <ClipLoader color="#ffffff" loading={true} size={20} /> */}
                     </div>
                   )}
                   Log In

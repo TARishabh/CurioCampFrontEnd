@@ -24,6 +24,8 @@ import VideoPage from "./pages/VideoPage";
 // import EditProfile from './pages/EditProfile'
 import PurchasedCourses from './pages/PurchasedCourses'
 import Collaborate from "./pages/Collaborate";
+import Learningpath from "./pages/Learningpath";
+
 const App = () => {
   return (
     <>
@@ -40,6 +42,7 @@ const App = () => {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/collaborate" element={<Collaborate />} />
         <Route exact path="/purchasedcourses" element={<PurchasedCourses />} />
+        <Route exact path="/pathquestions" element={<Learningpath />} />
         <Route exact path='/*' element={<Error />} />
       </Routes>
     </>
