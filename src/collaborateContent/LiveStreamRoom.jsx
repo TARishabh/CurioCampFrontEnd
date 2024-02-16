@@ -136,7 +136,7 @@ const LiveStreamRoom = () => {
   return (
     <>
       <div className="left-side">
-        <h3>Pleat check you camera / microphone!</h3>
+        {/* <h3>Pleat check you camera / microphone!</h3> */}
         <div className="buttons">
       {!isLiveStreamRoom && <button
             onClick={() => turnOnCamera()}
@@ -151,13 +151,13 @@ const LiveStreamRoom = () => {
             Turn {isAudioOn ? "off" : "on"} Microphone
           </button>}
         </div>
-        <h3>
+        {/* <h3>
           {`Please input the appid and token (`}
           <a href="https://www.agora.io/en/blog/how-to-get-started-with-agora">
             Create an account.
           </a>
           {`) `}
-        </h3>
+        </h3> */}
         {/* <input
           defaultValue={agora_appId}
           placeholder="appid"
@@ -168,18 +168,19 @@ const LiveStreamRoom = () => {
           placeholder="token"
           onChange={e => (token.current = e.target.value)}
         /> */}
-        <h3>Please input the channel name</h3>
+        <h3 className='mb-3'>Please input the channel name</h3>
         <input
           defaultValue={channel.current}
           onChange={e => (channel.current = e.target.value)}
+          className='border-2 py-1 px-1'
         />
         <div className="buttons">
-          <button onClick={joinChannel} className={isJoined ? "button-on" : ""}>
+          <button onClick={joinChannel} className={`py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300`}>
             Join Channel
           </button>
       {!isLiveStreamRoom &&  <button
             onClick={publishVideo}
-            className={isVideoPubed ? "button-on" : ""}
+            // className={isVideoPubed ? "button-on" : ""}
           >
             Publish Video
           </button>}
@@ -189,7 +190,7 @@ const LiveStreamRoom = () => {
           >
             Publish Audio
           </button>}
-          <button onClick={leaveChannel}>Leave Channel</button>
+          <button onClick={leaveChannel} className={`py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300`}>Leave Channel</button>
         </div>
       </div>
       <div className="right-side">

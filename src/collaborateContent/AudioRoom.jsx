@@ -146,18 +146,19 @@ const AudioRoom = () => {
           </button>}
           <button
             onClick={() => turnOnMicrophone()}
-            className={isAudioOn ? "button-on" : ""}
+            // className={isAudioOn ? "button-on" : ""}
+            className={`py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300`}
           >
             Turn {isAudioOn ? "off" : "on"} Microphone
           </button>
         </div>
-        <h3>
+        {/* <h3>
           {`Please input the appid and token (`}
           <a href="https://www.agora.io/en/blog/how-to-get-started-with-agora">
             Create an account.
           </a>
           {`) `}
-        </h3>
+        </h3> */}
         {/* <input
           defaultValue={agora_appId}
           placeholder="appid"
@@ -174,22 +175,23 @@ const AudioRoom = () => {
           onChange={e => (channel.current = e.target.value)}
         />
         <div className="buttons">
-          <button onClick={joinChannel} className={isJoined ? "button-on" : ""}>
+          <button onClick={joinChannel} className={`py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300`}>
             Join Channel
           </button>
       {!isAudioRoom &&  <button
             onClick={publishVideo}
-            className={isVideoPubed ? "button-on" : ""}
+            className={`py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300`}
           >
             Publish Video
           </button>}
           <button
             onClick={publishAudio}
-            className={isAudioPubed ? "button-on" : ""}
+            // className={isAudioPubed ? "button-on" : ""}
+            className={`py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300`}
           >
             Publish Audio
           </button>
-          <button onClick={leaveChannel}>Leave Channel</button>
+          <button onClick={leaveChannel} className={`py-2 mt-1 px-4 mx-2 inline-block rounded-full shadow-2xl bg-[#4F46E5] text-[#FFFFFF] hover:bg-[#382bf0] hover:-translate-y-1 duration-300`}>Leave Channel</button>
         </div>
       </div>
       <div className="right-side">

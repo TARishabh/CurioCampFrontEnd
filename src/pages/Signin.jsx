@@ -64,12 +64,12 @@ const Signin = () => {
                   type="submit"
                   className="text-[#E0E0E0] rounded-full px-5 py-2 my-8 mx-auto flex items-center bg-[#4F46E5] shadow-lg shadow-[#040c166b] font-bold text-lg dark:shadow-lg dark:shadow-[#959494] hover:bg-[#382bf0] hover:-translate-y-1 duration-300 relative" // Add relative positioning
                 >
-                  {loading && ( // Render cliploader if loading state is true
+                  {/* {loading && ( // Render cliploader if loading state is true
                     <div className="absolute inset-0 flex justify-center items-center">
                       <ClipLoader color="#ffffff" loading={true} size={20} /> // Customize ClipLoader as needed
                     </div>
-                  )}
-                  Log In
+                  )} */}
+                  Log In    
                 </button>
               </Form>
             )}
